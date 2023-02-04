@@ -1,0 +1,9 @@
+.Pokedex-title {
+    color: grey;
+}
+
+.Pokedex-tile-box {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 20px
+}
