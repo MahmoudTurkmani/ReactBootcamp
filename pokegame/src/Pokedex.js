@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Pokecard from './Pokecard';
+
 import './Pokedex.css';
 
 class Pokedex extends Component{
@@ -22,6 +23,7 @@ class Pokedex extends Component{
                 <article className='Pokedex-tile-box'>
                 {
                     Pokedex.pokedex.map((entry) => <Pokecard 
+                    key={entry.id}
                     id={entry.id} 
                     name={entry.name}
                     type={entry.type}
