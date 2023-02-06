@@ -1,11 +1,11 @@
 import './App.css';
 
-import Pokedex from './Pokedex';
+import Pokegame from './pokegame';
 
 function App() {
   return (
     <div className="App">
-      <Pokedex />
+      <Pokegame />
     </div>
   );
 }
