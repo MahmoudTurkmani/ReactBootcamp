@@ -1,0 +1,14 @@
+.Lottery {
+    border-width: 1px;
+    border-color: grey;
+    border-style: solid;
+    width: fit-content;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+}
+
+.Lottery * {
+    margin-bottom: 15px;
+}
