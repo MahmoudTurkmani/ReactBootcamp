@@ -15,6 +15,15 @@ import "./Cell.css"
  *
  **/
 
+/**
+ * I added 2 extra props to the class:
+ * xCord - the X coordinate of the cell
+ * yCord - the Y coordinate of the cell
+ * 
+ * These were added so that I can run the function flipCellsAroundMe 
+ *       with the appropriate args
+ */
+
 class Cell extends Component {
   constructor(props) {
     super(props);
@@ -23,7 +32,8 @@ class Cell extends Component {
 
   handleClick(evt) {
     // call up to the board to flip cells around this cell
-    this.props.flipCellsAroundMe();
+    let {xCord, yCord} = this.props;
+    this.props.flipCellsAroundMe(`${xCord}-${yCord}`);
   }
 
   render() {
@@ -36,4 +46,4 @@ class Cell extends Component {
 }
 
 
-export default Cell
+export default Cell;
