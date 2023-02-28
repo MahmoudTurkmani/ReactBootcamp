@@ -46,6 +46,9 @@ class Game extends Component {
   }
 
   toggleLocked(idx) {
+    if(this.state.rollsLeft < 1){
+      return;
+    }
     // toggle whether idx is in locked or not
     this.setState(st => ({
       locked: [
@@ -57,6 +60,9 @@ class Game extends Component {
   }
 
   doScore(rulename, ruleFn) {
+    if(this.state.scores[rulename] !== undefined){
+      return;
+    }
     // evaluate this ruleFn with the dice and score this rulename
     this.setState(st => ({
       scores: { ...st.scores, [rulename]: ruleFn(this.state.dice) },
@@ -81,7 +87,7 @@ class Game extends Component {
             <div className='Game-button-wrapper'>
               <button
                 className='Game-reroll'
-                disabled={this.state.locked.every(x => x)}
+                disabled={this.state.rollsLeft < 1}
                 onClick={this.roll}
               >
                 {this.state.rollsLeft} Rerolls Left
