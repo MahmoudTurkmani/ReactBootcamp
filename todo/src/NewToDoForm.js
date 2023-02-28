@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './NewToDoForm.css';
+
 class NewToDoForm extends Component {
     constructor(props) {
         super(props);
@@ -29,12 +31,13 @@ class NewToDoForm extends Component {
             <div className='NewToDoForm'>
                 <form onSubmit={this.handleSubmit}>
                     <input 
+                        className='NewToDoForm-input'
                         name='title'
                         type='text' 
                         onChange={this.handleChange} 
                         value={this.state.title}
                     />
-                    <button type='submit'>Add Item</button>
+                    <button type='submit' className='NewToDoForm-submit'>Add Item</button>
                 </form>
             </div>
         );

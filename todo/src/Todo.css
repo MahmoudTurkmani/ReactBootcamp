@@ -1,0 +1,9 @@
+.Todo {
+    margin: 15px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Todo-title {
+    margin-right: 50px;
+}

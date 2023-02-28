@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import './Todo.css';
+
 class Todo extends Component {
     constructor(props){
         super(props);
@@ -43,26 +45,26 @@ class Todo extends Component {
 
     render(){
         let editItem = (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className='Todo'>
                 <input type='text' value={this.state.title} onChange={this.handleChange} />
                 <button type='submit'>✔️</button>
             </form>
         );
 
         let viewItem = (
-            <div>
-                <span onClick={this.handleComplete}>
+            <div className='Todo'>
+                <span onClick={this.handleComplete} className='Todo-title'>
                     {this.state.isCompleted ? <s>{this.props.title}</s> : this.props.title}
                 </span>
-                <button onClick={this.handleEdit}>✏️</button>
-                <button onClick={this.handleDelete}>🗑️</button>
+                <div>
+                    <button onClick={this.handleEdit}>✏️</button>
+                    <button onClick={this.handleDelete}>🗑️</button>
+                </div>
             </div>
         );
 
         return (
-            <div className='Todo'>
-                {this.state.isEditing ? editItem : viewItem}
-            </div>
+                this.state.isEditing ? editItem : viewItem
         );
     }
 }

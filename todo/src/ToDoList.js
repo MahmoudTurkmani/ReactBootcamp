@@ -3,6 +3,7 @@ import {v1} from 'uuid';
 
 import Todo from './Todo';
 import NewToDoForm from './NewToDoForm';
+import './ToDoList.css';
 
 class ToDoList extends Component {
     constructor(props) {
@@ -50,8 +51,11 @@ class ToDoList extends Component {
     render() {
         return (
             <div className='ToDoList'>
-                {this.state.toDoList.map((item) => <Todo id={item.id} title={item.title} removeItem={this.removeItem} updateTitle={this.updateTitle} />)}
-                <NewToDoForm addItem={this.addItem} />
+                <h1 className='ToDoList-title'>ToDo List</h1>
+                <section className='ToDoList-container'>
+                    {this.state.toDoList.map((item) => <Todo id={item.id} title={item.title} removeItem={this.removeItem} updateTitle={this.updateTitle} />)}
+                    <NewToDoForm addItem={this.addItem} />
+                </section>
             </div>
         );
     }

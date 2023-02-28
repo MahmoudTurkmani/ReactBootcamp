@@ -1,0 +1,16 @@
+.NewToDoForm-submit {
+    background-color: rgb(105, 153, 93);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 2.5px;
+    margin-left: 10px
+}
+
+.NewToDoForm-submit:hover {
+    background-color: rgb(95, 139, 85);
+}
+
+.NewToDoForm-submit:active {
+    background-color: rgb(87, 126, 78);
+}
