@@ -13,14 +13,36 @@ class Die extends Component {
   }
 
   render() {
+    let icon = 'fas fa-dice-one fa-2xl';
+    switch(this.props.val){
+      case 2:
+        icon = 'fas fa-dice-two fa-2xl';
+        break;
+      case 3:
+        icon = 'fas fa-dice-three fa-2xl';
+        break;
+      case 4:
+        icon = 'fas fa-dice-four fa-2xl';
+        break;
+      case 5:
+        icon = 'fas fa-dice-five fa-2xl';
+        break;
+      case 6:
+        icon = 'fas fa-dice-six fa-2xl';
+        break;
+      default:
+        icon = 'fas fa-dice-one fa-2xl';
+    }
+
+    const locked = this.props.locked ? 'Die-locked' : '';
+    const isRolling = this.props.isRolling ? 'Die-rolling' : '';
+
     return (
-      <button
-        className={"Die"}
-        style={{ backgroundColor: this.props.locked ? "grey" : "black" }}
+      <div
+        className={`Die ${icon} ${locked} ${isRolling}`}
         onClick={this.lockDie}
       >
-        {this.props.val}
-      </button>
+      </div>
     );
   }
 }
