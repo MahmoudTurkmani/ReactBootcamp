@@ -1,0 +1,17 @@
+.Joke-Container {
+    display: flex;
+    /* justify-content: space-between; */
+    flex-wrap: nowrap;
+    text-align: left;
+}
+
+.Joke-Rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 70px;
+    align-items: center;
+    margin-right: 25px;
+    margin: 10px 15px  0px 0px;
+    padding: 5px;
+}

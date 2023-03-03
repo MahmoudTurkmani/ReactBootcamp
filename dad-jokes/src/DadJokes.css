@@ -10,12 +10,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30vw;
+    min-width: 250px;
+    max-width: 300px;
     background-color: rgb(125, 185, 182);
 }
 
 .DadJokes-Jokes {
     padding: 25px;
+    width: 70vw;
     display: flex;
     flex-direction: column;
+    /* background-color: rgb(77, 69, 93); */
+    color: black;
+    /* font-weight: bold; */
 }

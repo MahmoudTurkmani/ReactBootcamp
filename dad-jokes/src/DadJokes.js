@@ -12,6 +12,8 @@ class DadJokes extends Component {
             jokes: [],
             isLoading: true,
         }
+
+        this.rate = this.rate.bind(this);
     }
 
     async componentDidMount() {
@@ -28,6 +30,19 @@ class DadJokes extends Component {
         this.setState({jokes: jokes, isLoading: false});
     }
 
+    rate(id, rating) {
+        let newJokes = this.state.jokes.map((joke) => {
+            if(joke.id === id){
+                return {...joke, rating: joke.rating + rating};
+            }
+            else{
+                return joke;
+            }
+        }).sort((j1, j2) => j1.rating < j2.rating);
+
+        this.setState({jokes: newJokes});
+    }
+
     render() {
         return (
             <div className='DadJokes'>
@@ -36,7 +51,7 @@ class DadJokes extends Component {
                 </section>
                 <section className='DadJokes-Jokes'>
                     {this.state.isLoading && <p>Loading...</p>}
-                    {this.state.jokes.map((joke) => <Joke key={joke.id} joke={joke.joke} />)}
+                    {this.state.jokes.map((joke) => <Joke key={joke.id} id={joke.id} joke={joke.joke} rating={joke.rating} rate={this.rate} />)}
                 </section>
             </div>
         );
