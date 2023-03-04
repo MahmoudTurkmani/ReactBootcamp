@@ -8,11 +8,19 @@
 
 .DadJokes-Banner {
     display: flex;
+    flex-direction: column;
+    color: whitesmoke;
     justify-content: center;
     align-items: center;
     min-width: 250px;
     max-width: 300px;
     background-color: rgb(125, 185, 182);
+}
+
+.DadJokes-Banner-Icon {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    height: 120px;
 }
 
 .DadJokes-Jokes {
